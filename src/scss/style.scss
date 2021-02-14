@@ -1,9 +1,42 @@
 @import "_reset.scss";
 @import "_variables.scss";
+@import "_element.scss";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
 body {
   width: 100%;
   background-color: aquamarine;
+  padding: 0 $bodySidePadding;
+  font-family: "Montserrat";
+}
+
+header {
+  width: 100%;
+  height: 5vh;
+  background-color: white;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  font-size: 0.85rem;
+  .header-column:first-child {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    a {
+      @extend %link;
+    }
+  }
+  nav {
+    width: 25%;
+    ul {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      a {
+        @extend %link;
+      }
+    }
+  }
 }
 
 img {

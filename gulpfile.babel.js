@@ -35,7 +35,13 @@ const styles = () => gulp.src(routes.scss.src).pipe(sass().on('error', sass.logE
 
 const clean = () => del(["build"])
 
-const watch = () => gulp.watch(routes.pug.watch, pug)
+const watch = () => { 
+    gulp.watch(routes.pug.watch, pug)
+    gulp.watch(routes.img.src, image)
+    gulp.watch(routes.scss.watch, styles)
+}
+
+    
 
 const webserver = () => gulp.src("build").pipe(ws({
     livereload: true,
